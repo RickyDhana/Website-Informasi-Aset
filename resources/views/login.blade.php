@@ -26,18 +26,20 @@
             </h1>
 
             <!-- Form -->
-            <div class="w-full max-w-xs">
+            <form action="{{ url('/login') }}" method="POST" class="w-full max-w-xs">
+                @csrf
+
                 <!-- Username -->
                 <input
                     class="w-full px-8 py-4 mb-2 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                    type="email" placeholder="Username" />
+                    type="text" name="username" placeholder="Username" />
 
                 <!-- Password + Icon -->
                 <div class="relative mt-5">
                     <input
                         id="password"
                         class="w-full px-8 py-4 pr-12 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                        type="password" placeholder="Password" />
+                        type="password" name="password" placeholder="Password" />
                     
                     <!-- Icon toggle -->
                     <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700">
@@ -46,14 +48,13 @@
                 </div>
 
                 <!-- Tombol Login -->
-                <button
+                <button type="submit"
                     class="mt-5 tracking-wide font-semibold bg-[#0085FF] text-gray-100 w-full py-4 rounded-lg hover:bg-[#0063c0] transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                     <span class="ml-3">
                         Login
                     </span>
                 </button>
-                
-            </div>
+            </form>
         </div>
 
         <!-- Kolom Kanan -->

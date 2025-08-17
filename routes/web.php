@@ -2,18 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login'); // login.blade.php di folder resources/views
-})->name('login');
+// Login
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/admin', function () {
-    return view('admin'); // login.blade.php di folder resources/views
-})->name('admin');
+// Logout
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Admin dashboard
+Route::get('/admin', [AuthController::class, 'dashboard'])->name('admin');
 
 // Dinamis: /data-mesin/kania atau /alat-ukur/kaprang, dll
 Route::get('/{jenis}/{divisi}', [DivisiController::class, 'show'])
