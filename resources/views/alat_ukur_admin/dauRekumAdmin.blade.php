@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Mesin Las Rekum - Admin</title>
+    <title>Data Alat Ukur Rekum - Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-6">
 
-    <h1 class="text-2xl font-bold mb-4">Data Mesin Las Rekum (Admin)</h1>
+    <h1 class="text-2xl font-bold mb-4">Data Alat Ukur Rekum (Admin)</h1>
 
     {{-- Tombol Tambah Data --}}
     <div class="mb-4">

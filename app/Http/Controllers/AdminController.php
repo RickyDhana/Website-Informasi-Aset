@@ -52,7 +52,7 @@ class AdminController extends Controller
     public function index($jenis, $divisi)
     {
         $table = $this->getTableName($jenis, $divisi);
-        $data = DB::table($table)->paginate(10);
+        $data = DB::table($table)->paginate(20);
 
         // tentukan folder & file view sesuai struktur
         $folder = $jenis === 'data-mesin' ? 'data_mesin_admin' : 'alat_ukur_admin';
@@ -142,11 +142,11 @@ class AdminController extends Controller
                 'rekum' => 'dml_rekum',
             ],
             'alat-ukur' => [
-                'kania' => 'au_kania',
-                'kapsel' => 'au_kapsel',
-                'kaprang' => 'au_kaprang',
-                'harkan' => 'au_harkan',
-                'rekum' => 'au_rekum',
+                'kania' => 'dau_kania',
+                'kapsel' => 'dau_kapsel',
+                'kaprang' => 'dau_kaprang',
+                'harkan' => 'dau_harkan',
+                'rekum' => 'dau_rekum',
             ]
         ];
 
